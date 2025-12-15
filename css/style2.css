@@ -1,0 +1,147 @@
+.section {
+  height: 75vh;
+  display: grid;
+  place-items: center;
+}
+
+#contatti {
+  height: fit-content;
+}
+
+.card {
+  transition: 0.3s ease-in;
+}
+
+.card.opened {
+  width: 300px;
+  height: 600px;
+}
+
+#chi-siamo-container {
+  width: fit-content;
+  height: fit-content;
+  padding: 50px 10px;
+  background-color: rgba(255, 255, 255, 0.651);
+  border-radius: 21px;
+}
+
+.container2 {
+  width: fit-content;
+  height: fit-content;
+  padding: 50px 10px;
+  border-radius: 21px;
+}
+
+.card .container h2 {
+  position: relative;
+  left: 500px;
+}
+
+#servizi {
+  display: flex;
+  background-image: url(../img/muratore.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh + 150px);
+  align-items: flex-start;
+  padding-top: 270px;
+  position: relative;
+}
+
+#servizi::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 150px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contatti-hero {
+  position: relative;
+  min-height: 100vh;
+  background: url('../img/contatti.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.contatti-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); /* oscuramento */
+  z-index: 1;
+}
+
+.contatti-hero .container {
+  position: relative;
+  z-index: 2; /* sopra l’overlay */
+}
+
+#contatti {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px 40px 40px;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* sfondo per contatti */
+.contatti-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('../img/contatti.jpg') center/cover no-repeat;
+  filter: brightness(60%) blur(3px);
+  z-index: 0;
+}
+
+/* sfondo per lavora con noi */
+.lavora-con-noi-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('../img/lavora-con-noi.jpg') center/cover no-repeat;
+  filter: brightness(60%) blur(3px);
+  z-index: 0;
+}
+
+/* overlay scuro */
+#contatti::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* contenuto sopra */
+#contatti .container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* fade-in sequenziale */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-out;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
